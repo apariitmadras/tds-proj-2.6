@@ -136,5 +136,6 @@ async def analyze(file: UploadFile = File(...)):
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 if __name__ == "__main__":
-    import uvicorn, os
+    import uvicorn
+    import os
     uvicorn.run("app:app", host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
